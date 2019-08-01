@@ -1,0 +1,13 @@
+*ver ngbootstrap
+
+decorador : 
+    funciones que se agregan como anotaciones @nombredecorador,
+    ya vienen diseñadas por angular, se pueden crear pero es raro.
+
+--  PARA HACER UN *ngIf dentro de un *ngFor, uso
+    la etiqueta: 
+
+    <ng-container *ngIf="  condicion  ">
+        resultado de condicion
+    </ng-container>
+
