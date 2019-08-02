@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioAutosService } from '../servicios/servicio-autos.service';
 
 @Component({
   selector: 'app-componente-auto',
@@ -9,32 +10,33 @@ export class ComponenteAutoComponent implements OnInit {
 
   velocidad: number;
   autoParam: any;
+  autos: any[];
 
-  autoUno: Object = {
-    "id" : 1,
-    "fecha" : 2017,
-    "modelo" : "Fiat",
-    "velocidad" : 120,
-    "patente" : "no tiene"
-  }
+  // autoUno: Object = {
+  //   "id" : 1,
+  //   "fecha" : new Date("11-15-1996"),
+  //   "modelo" : "Fiat",
+  //   "velocidad" : 120,
+  //   "patente" : "no tiene"
+  // }
 
-  autoDos: Object = {
-    "id" : 2,
-    "fecha" : 1987,
-    "modelo" : "Dodge",
-    "velocidad" : 90,
-    "patente" : "vencida"
-  }
+  // autoDos: Object = {
+  //   "id" : 2,
+  //   "fecha" : new Date("06-22-2015"),
+  //   "modelo" : "Dodge",
+  //   "velocidad" : 90,
+  //   "patente" : "vencida"
+  // }
 
-  autoTres: Object = {
-    "id" : 3,
-    "fecha" : 2005,
-    "modelo" : "Chevrolet",
-    "velocidad" : 170,
-    "patente" : "ABC123"
-  }
+  // autoTres: Object = {
+  //   "id" : 3,
+  //   "fecha" : new Date("03-31-2005"),
+  //   "modelo" : "Chevrolet",
+  //   "velocidad" : 170,
+  //   "patente" : "ABC123"
+  // }
 
-  autos: Array<object> = [this.autoUno,this.autoDos,this.autoTres];
+  // autos: Array<object> = [this.autoUno,this.autoDos,this.autoTres];
 
   cambiarColor(auto): any {
     if (this.velocidad >= auto.velocidad) {
@@ -48,9 +50,10 @@ export class ComponenteAutoComponent implements OnInit {
     this.autoParam = auto;
   }
 
-  constructor() { }
+  constructor(private servicioAutos: ServicioAutosService) { }
 
   ngOnInit() {
+    this.autos = this.servicioAutos.getAutos();
   }
 
 }
