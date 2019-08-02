@@ -1,0 +1,35 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Limite velocidad: </span>
+    </div>
+    <input type="text" class="form-control" placeholder="ingrese velocidad" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)] = "velocidad">
+</div>
+<div class="container d-flex">
+<div class="col">
+    <table class="table table-striped">
+        <thead>
+          <tr class="thead-dark">
+            <th scope="col">#id</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Velocidad</th>
+            <th scope="col">Patente</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let auto of autos" [ngClass]="cambiarColor(auto)" (click)="guardarAuto(auto)">
+            <!-- <ng-container *ngIf="auto.velocidad < velocidad"> -->
+                <th scope="row">{{auto.id}}</th>
+                <td>{{auto.fecha}}</td>
+                <td>{{auto.modelo}}</td>
+                <td>{{auto.velocidad}}</td>
+                <td>{{auto.patente}}</td>
+            <!-- </ng-container> -->
+        </tr>
+        </tbody>
+      </table>
+</div>
+<div class="col">
+    <app-componente-detalles [param]="autoParam"></app-componente-detalles>
+</div>
+</div>
