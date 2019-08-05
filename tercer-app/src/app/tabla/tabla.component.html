@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Pos.</th>
+      <th scope="col">Equipo</th>
+      <th scope="col">PTS</th>
+      <th scope="col">PG</th>
+      <th scope="col">PE</th>
+      <th scope="col">PP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tabla of tablas; let indice = index" (click)="setearEquipo(tabla.cod)">
+      <th scope="row">{{indice}}</th>
+      <td>{{tabla.nombre}}</td>
+      <td>{{tabla.pts}}</td>
+      <td>{{tabla.pg}}</td>
+      <td>{{tabla.pe}}</td>
+      <td>{{tabla.pp}}</td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
