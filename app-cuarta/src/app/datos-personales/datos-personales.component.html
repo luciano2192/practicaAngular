@@ -1,0 +1,74 @@
+<!-- <div class="container">
+  <h3> Curriculum </h3>
+  <form [formGroup]="curriculumForm" (ngSubmit)="enviarCurriculum()">
+    <div class="row">
+      <label for="nombre" class="col-2"> Nombre: </label> <input id="nombre" class="col-3" type="text"
+        formControlName="nombre">
+    </div>
+
+    <div class="row">
+      <select class="col-3" formControlName="genero" name="genero" id="genero">
+        <option *ngFor="let genero of generos" value="{{ genero.id }}"> {{ genero.descripcion }}</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="email" class="col-2"> email: </label> <input id="email" class="col-3" type="text"
+        formControlName="email">
+    </div>
+
+    <div class="row">
+      <label class="col-2"> Apodo: </label> <input class="col-3" type="text" formControlName="apodo">
+    </div>
+    <br>
+    <div class="row">
+      <button type="submit" [disabled]="!curriculumForm.valid" class="col-2 offset-1 btn btn-primary">Guardar</button>
+      <button (click)="limpiarCampos()" class="col-2 offset-1 btn btn-danger">Borrar</button>
+    </div>
+
+    Form: {{ curriculumForm.status }}
+  </form> -->
+
+  <!-- form dos -->
+   
+  <form [formGroup]="curriculumForm" (ngSubmit)="enviarCurriculum()" class="container-fluid">
+    <h3 class="display-4">Curriculum</h3>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="ingrese nombre" formControlName="nombre">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="apellido">Apellido</label>
+        <input type="text" class="form-control" id="apellido" placeholder="ingrese apellido" formControlName="apellido">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="dni">D.N.I</label>
+        <input type="number" class="form-control" id="inputAddress" placeholder="ingrese numero DNI" formControlName="dni">
+      </div>
+      <div class="form-group col-md-8">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="inputAddress2" placeholder="ingrese email" formControlName="email">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="telefono">Telefono</label>
+        <input type="number" class="form-control" id="inputCity" placeholder="ingrese su telefono" formControlName="telefono">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="genero">Genero</label>
+        <select id="genero" class="form-control" formControlName="genero" name="genero">
+          <option *ngFor="let genero of generos" value="{{genero.id}}">{{genero.descripcion}}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="apodo">Apodo</label>
+        <input type="text" class="form-control" id="inputZip" placeholder="ingrese su apodo" formControlName="apodo">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mr-3" [disabled]="!curriculumForm.valid">Guardar</button>
+    <button class="btn btn-primary" (click)="limpiarCampos()">Limpiar Formulario</button>
+  </form>

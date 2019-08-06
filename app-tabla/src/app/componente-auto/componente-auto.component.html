@@ -20,7 +20,7 @@
           <tr *ngFor="let auto of autos" [ngClass]="cambiarColor(auto)" (click)="guardarAuto(auto)">
             <!-- <ng-container *ngIf="auto.velocidad < velocidad"> -->
                 <th scope="row">{{auto.id}}</th>
-                <td>{{auto.fecha}}</td>
+                <td>{{auto.fecha | date: "shortDate"}}</td>
                 <td>{{auto.modelo}}</td>
                 <td>{{auto.velocidad}}</td>
                 <td>{{auto.patente}}</td>
